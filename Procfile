@@ -1,2 +1,2 @@
 release: python manage.py migrate
-web: gunicorn Enterprise40.wsgi --log-file -
+web: gunicorn ImageClassify.wsgi --log-file -
