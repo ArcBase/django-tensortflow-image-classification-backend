@@ -50,6 +50,7 @@ with modelGraph.as_default():
         if model:
             print('works')
 
+from django.core.files import File
 
 height , width =224,224
 class ProcessImage(APIView):
@@ -57,13 +58,16 @@ class ProcessImage(APIView):
     def post(self, request):
         try:
             data = request.data
-            fileObj =  data['imageFile']
-            
+            uploadedImage =  data['imageFile']
+            # f = open(uploadedImage)
+            # myfile = File(f)
+
             if data['imageFile'] != None:
-                #print(uploadedImage)
-                #take = io.BytesIO(data['imageFile'] )
+                print(uploadedImage)
+                
                 fs=FileSystemStorage()
-                filePathName=fs.save(fileObj.name,fileObj)
+
+                filePathName=fs.save(uploadedImage.name,uploadedImage)
                 filePathName=fs.url(filePathName)
                 testimage='.'+filePathName
                 #Kerasz
@@ -96,6 +100,7 @@ class ProcessImage(APIView):
                     'Label':the_result_label[1]
                 }
 
+                fs.delete(uploadedImage.name)
                 return Response(data  = context , status= HTTP_200_OK)
             else:
                 context = {

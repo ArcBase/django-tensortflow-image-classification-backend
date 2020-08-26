@@ -79,7 +79,8 @@ WSGI_APPLICATION = 'ImageClassify.wsgi.application'
 
 #Use this to maintain access to restframework
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000', 'http://127.0.0.1:3000'
+    'http://localhost:3000', 'http://127.0.0.1:3000' ,
+    'https://react-image-classifcation.vercel.app',
     
 )
 
