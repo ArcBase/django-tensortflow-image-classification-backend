@@ -25,7 +25,7 @@ SECRET_KEY = '*6bk$_is)3acr*8+jad*b#=#2v%!d^7ea_gd3u0&@_av8y&=rc'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -80,8 +80,7 @@ WSGI_APPLICATION = 'ImageClassify.wsgi.application'
 #Use this to maintain access to restframework
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:3000', 'http://127.0.0.1:3000' ,
-    'https://react-image-classifcation.vercel.app',
-    
+    'https://react-nextjs-django-tensorflow-image-classification.vercel.app',
 )
 
 
