@@ -75,7 +75,6 @@ class ProcessImage(APIView):
                 #converts to nump array
                 image_x = image.img_to_array(theImage)
 
-                #flattens dimension
                 image_x = image_x/255 
                 image_x = image_x.reshape(1,height, width,3)
 
